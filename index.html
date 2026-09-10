@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff6dc" />
+  <title>陈导，教师节快乐！</title>
+  <style>
+    :root{
+      --ink:#2b2b38;
+      --pink:#ff7f9f;
+      --yellow:#ffd768;
+      --blue:#7ac7ff;
+      --green:#82d9b1;
+      --cream:#fff8e9;
+      --paper:#fffdf7;
+      --purple:#a88cff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(255,215,104,.35),transparent 25%),
+        radial-gradient(circle at 88% 12%,rgba(122,199,255,.28),transparent 22%),
+        radial-gradient(circle at 80% 86%,rgba(255,127,159,.18),transparent 24%),
+        #fffaf0;
+      overflow-x:hidden;
+    }
+    .page{
+      width:min(920px,100%);
+      margin:auto;
+      padding:18px 16px 64px;
+      position:relative;
+    }
+    .float{
+      position:fixed;
+      pointer-events:none;
+      opacity:.75;
+      z-index:0;
+      animation: drift 6s ease-in-out infinite;
+      font-size:24px;
+    }
+    .f1{left:5%;top:13%}.f2{right:6%;top:20%;animation-delay:-2s}.f3{left:8%;bottom:14%;animation-delay:-4s}.f4{right:7%;bottom:10%;animation-delay:-1s}
+    @keyframes drift{50%{transform:translateY(-12px) rotate(8deg)}}
+    .card{
+      position:relative;
+      z-index:2;
+      background:rgba(255,253,247,.94);
+      border:3px solid var(--ink);
+      border-radius:28px;
+      box-shadow:8px 8px 0 rgba(43,43,56,.14);
+      padding:24px;
+      margin-bottom:18px;
+    }
+    .hero{
+      min-height:78vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding-top:34px;
+    }
+    .badge{
+      display:inline-block;
+      background:var(--yellow);
+      border:2px solid var(--ink);
+      border-radius:999px;
+      padding:7px 13px;
+      font-weight:800;
+      box-shadow:3px 3px 0 rgba(43,43,56,.14);
+      transform:rotate(-2deg);
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(34px,8vw,64px);
+      line-height:1.05;
+      margin:4px 0 10px;
+      letter-spacing:-1px;
+    }
+    .highlight{
+      background:linear-gradient(transparent 56%, #ffe185 56%);
+      padding:0 4px;
+    }
+    .sub{
+      font-size:clamp(17px,4.8vw,23px);
+      line-height:1.8;
+      max-width:650px;
+      margin:0 auto 20px;
+    }
+    .avatar-wrap{
+      width:220px;height:220px;
+      position:relative;
+      margin:12px auto 20px;
+    }
+    .halo{
+      position:absolute;inset:0;
+      background:var(--yellow);
+      border:3px solid var(--ink);
+      border-radius:46% 54% 52% 48%;
+      animation:wobble 4s ease-in-out infinite;
+    }
+    @keyframes wobble{50%{transform:rotate(4deg) scale(1.03)}}
+    .teacher{
+      position:absolute;
+      left:36px;right:36px;top:22px;bottom:20px;
+    }
+    .hair{
+      position:absolute;left:28px;top:5px;width:93px;height:70px;
+      background:#25252d;border:3px solid var(--ink);
+      border-radius:50% 50% 35% 35%;
+      transform:rotate(-2deg);
+    }
+    .face{
+      position:absolute;left:33px;top:27px;width:84px;height:92px;
+      background:#ffd9bd;border:3px solid var(--ink);
+      border-radius:44% 44% 48% 48%;
+    }
+    .ear{position:absolute;top:61px;width:18px;height:28px;background:#ffd9bd;border:3px solid var(--ink);border-radius:50%}
+    .ear.l{left:22px}.ear.r{right:22px}
+    .eye{
+      position:absolute;top:58px;width:8px;height:10px;background:var(--ink);border-radius:50%;
+    }
+    .eye.l{left:54px}.eye.r{right:54px}
+    .glasses{
+      position:absolute;top:48px;left:42px;width:30px;height:24px;border:3px solid var(--ink);border-radius:8px;
+      box-shadow:39px 0 0 -3px #ffd9bd,39px 0 0 0 var(--ink);
+    }
+    .glasses:after{
+      content:"";position:absolute;left:26px;top:8px;width:15px;height:3px;background:var(--ink);
+    }
+    .smile{
+      position:absolute;left:69px;top:91px;width:24px;height:12px;border-bottom:3px solid var(--ink);border-radius:50%;
+    }
+    .body{
+      position:absolute;left:21px;top:111px;width:110px;height:74px;background:white;border:3px solid var(--ink);
+      border-radius:32px 32px 16px 16px;
+    }
+    .body:before,.body:after{
+      content:"";position:absolute;top:18px;width:46px;height:3px;background:var(--ink);transform:rotate(55deg)
+    }
+    .body:before{left:9px}.body:after{right:9px;transform:rotate(-55deg)}
+    .tie{
+      position:absolute;left:71px;top:126px;width:10px;height:35px;background:var(--blue);
+      border:2px solid var(--ink);clip-path:polygon(50% 0,100% 18%,70% 100%,30% 100%,0 18%);
+    }
+    .bubble{
+      position:absolute;
+      right:-30px;top:16px;
+      background:white;border:3px solid var(--ink);border-radius:18px;
+      padding:10px 12px;font-weight:900;font-size:14px;
+      transform:rotate(5deg);
+      box-shadow:4px 4px 0 rgba(43,43,56,.12);
+    }
+    .bubble:after{
+      content:"";position:absolute;left:10px;bottom:-12px;width:16px;height:16px;background:white;
+      border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg);
+    }
+    .btn{
+      border:3px solid var(--ink);
+      border-radius:16px;
+      background:var(--pink);
+      color:white;
+      padding:13px 20px;
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:4px 5px 0 var(--ink);
+      transition:.15s ease;
+    }
+    .btn:active{transform:translate(3px,4px);box-shadow:1px 1px 0 var(--ink)}
+    h2{font-size:28px;margin:0 0 14px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .mini{
+      border:2px solid var(--ink);
+      border-radius:20px;
+      padding:18px 16px;
+      min-height:150px;
+      position:relative;
+      overflow:hidden;
+    }
+    .mini:nth-child(1){background:#fff1b8}
+    .mini:nth-child(2){background:#dff2ff}
+    .mini:nth-child(3){background:#e4f7ec}
+    .mini:nth-child(4){background:#ffe4ec}
+    .mini .icon{font-size:34px;margin-bottom:8px}
+    .mini b{font-size:19px}
+    .mini p{margin:8px 0 0;line-height:1.65}
+    .quote{
+      font-size:clamp(22px,5vw,34px);
+      font-weight:900;
+      line-height:1.65;
+      text-align:center;
+      padding:12px 8px 4px;
+    }
+    .signature{text-align:right;font-weight:800;margin-top:14px}
+    .tiny{text-align:center;color:#646474;font-size:13px;margin-top:18px}
+    .confetti{
+      position:fixed;top:-20px;width:10px;height:14px;border-radius:2px;z-index:99;
+      animation:fall linear forwards;
+    }
+    @keyframes fall{
+      to{transform:translate3d(var(--dx),110vh,0) rotate(760deg);opacity:.95}
+    }
+    .secret{
+      margin-top:14px;
+      display:none;
+      background:#f4eeff;
+      border:2px dashed var(--purple);
+      border-radius:16px;
+      padding:14px;
+      font-weight:700;
+      line-height:1.7;
+    }
+    .lab-line{
+      display:flex;align-items:center;justify-content:center;gap:9px;
+      flex-wrap:wrap;margin-top:6px
+    }
+    .tag{
+      background:white;border:2px solid var(--ink);border-radius:999px;padding:6px 10px;font-weight:800
+    }
+    @media (max-width:640px){
+      .card{padding:20px 16px;border-radius:24px}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:24px}
+      .avatar-wrap{transform:scale(.92);margin-top:2px}
+      .bubble{right:-9px;top:7px}
+    }
+
+    .fun-zone{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .fun-btn{
+      border:2px solid var(--ink);
+      border-radius:18px;
+      padding:16px 12px;
+      font-size:16px;
+      font-weight:900;
+      cursor:pointer;
+      background:white;
+      box-shadow:3px 4px 0 rgba(43,43,56,.18);
+      transition:.15s ease;
+      min-height:88px;
+    }
+    .fun-btn:nth-child(1){background:#fff0b8}
+    .fun-btn:nth-child(2){background:#dff4ff}
+    .fun-btn:nth-child(3){background:#e4f7ec}
+    .fun-btn:nth-child(4){background:#ffe6ee}
+    .fun-btn:nth-child(5){background:#f0e8ff}
+    .fun-btn:nth-child(6){background:#ffe8d6}
+    .fun-btn:active{transform:translate(2px,3px);box-shadow:1px 1px 0 rgba(43,43,56,.18)}
+    .result-box{
+      margin-top:14px;
+      padding:15px;
+      border:2px dashed var(--ink);
+      border-radius:16px;
+      background:#fffdf7;
+      min-height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-weight:800;
+      line-height:1.65;
+    }
+    .meter{
+      width:100%;
+      height:18px;
+      border:2px solid var(--ink);
+      border-radius:999px;
+      overflow:hidden;
+      background:white;
+      margin:10px 0 4px;
+    }
+    .meter > div{
+      height:100%;
+      width:0;
+      background:linear-gradient(90deg,#7ac7ff,#ffd768,#ff7f9f);
+      transition:width .7s cubic-bezier(.2,.8,.2,1);
+    }
+    .stamp{
+      display:inline-block;
+      margin:7px;
+      padding:8px 12px;
+      border:3px solid #d84848;
+      color:#d84848;
+      border-radius:8px;
+      font-weight:1000;
+      transform:rotate(-6deg);
+      background:#fff8f8;
+    }
+    .shake{animation:shake .35s ease}
+    @keyframes shake{
+      20%{transform:translateX(-6px) rotate(-2deg)}
+      40%{transform:translateX(6px) rotate(2deg)}
+      60%{transform:translateX(-4px) rotate(-1deg)}
+      80%{transform:translateX(4px) rotate(1deg)}
+    }
+    .emoji-pop{
+      position:fixed;
+      z-index:120;
+      font-size:28px;
+      pointer-events:none;
+      animation:popfly 1.3s ease-out forwards;
+    }
+    @keyframes popfly{
+      0%{transform:scale(.4) translateY(0);opacity:0}
+      20%{opacity:1}
+      100%{transform:scale(1.4) translateY(-120px) rotate(25deg);opacity:0}
+    }
+    @media (max-width:640px){
+      .fun-zone{grid-template-columns:1fr 1fr}
+      .fun-btn{font-size:15px;padding:13px 8px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="float f1">⭐</div>
+  <div class="float f2">🧪</div>
+  <div class="float f3">📚</div>
+  <div class="float f4">✨</div>
+
+  <main class="page">
+    <section class="card hero">
+      <div class="badge">9·10 教师节限定页面</div>
+      <h1>陈导，<span class="highlight">教师节快乐！</span></h1>
+      <p class="sub">
+        来自研一新生安小龙的一份小小祝福：<br>
+        愿陈导科研一路开挂，论文多多，项目顺利，天天心情在线！
+      </p>
+
+      <div class="avatar-wrap" aria-label="卡通导师形象">
+        <div class="halo"></div>
+        <div class="teacher">
+          <div class="hair"></div>
+          <div class="ear l"></div><div class="ear r"></div>
+          <div class="face"></div>
+          <div class="eye l"></div><div class="eye r"></div>
+          <div class="glasses"></div>
+          <div class="smile"></div>
+          <div class="body"></div>
+          <div class="tie"></div>
+          <div class="bubble">科研高手<br>颜值担当</div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="celebrate()">点一下，给陈导加点“科研 Buff” 🎉</button>
+      <div id="secret" class="secret">
+        Buff 已叠满：<br>
+        「灵感 +100」 「基金命中率 +100」 「论文录用率 +100」<br>
+        以及最重要的——「帅气值：本来就满格，不再增加」😎
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>为什么说陈导很强？</h2>
+      <div class="grid">
+        <div class="mini">
+          <div class="icon">🧠</div>
+          <b>科研能力：强</b>
+          <p>复杂问题到陈导这里，总能被拆得清清楚楚。思路稳、判断准，科研路线不迷路。</p>
+        </div>
+        <div class="mini">
+          <div class="icon">😎</div>
+          <b>颜值气质：在线</b>
+          <p>属于那种一看就很有“导师范儿”的帅——沉稳里带点学术气质，靠谱里还有点亲切。</p>
+        </div>
+        <div class="mini">
+          <div class="icon">🚀</div>
+          <b>带队属性：靠谱</b>
+          <p>希望未来在陈导带领下，少踩坑、多成长，早日从“研一萌新”进化成“科研熟练工”。</p>
+        </div>
+        <div class="mini">
+          <div class="icon">📈</div>
+          <b>科研运势：一路上扬</b>
+          <p>祝项目推进顺利、实验数据漂亮、审稿人温柔、好消息一个接一个。</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="card" id="playground">
+      <h2>陈导专属 · 教师节���动区 🎮</h2>
+      <p style="line-height:1.7;margin-top:0">这里可以多点几个。友情提示：部分按钮可能会触发“过量彩虹屁”。</p>
+
+      <div class="fun-zone">
+        <button class="fun-btn" onclick="researchBox(this)">🧪<br>科研盲盒</button>
+        <button class="fun-btn" onclick="handsomeIndex(this)">😎<br>今日帅气指数</button>
+        <button class="fun-btn" onclick="paperSimulator(this)">📄<br>论文接收模拟器</button>
+        <button class="fun-btn" onclick="praiseMachine(this)">📣<br>学生夸夸机</button>
+        <button class="fun-btn" onclick="luckySign(this)">🎋<br>教师节幸运签</button>
+        <button class="fun-btn" onclick="bossMode(this)">👑<br>陈导 Boss 模式</button>
+      </div>
+
+      <div id="funResult" class="result-box">👆 随便点一个，看看今天陈导会触发什么隐藏属性。</div>
+
+      <div style="margin-top:16px">
+        <b>陈导综合战斗力</b>
+        <div class="meter"><div id="powerBar"></div></div>
+        <div id="powerText" style="text-align:right;font-size:13px;color:#666">等待检测中……</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="quote">
+        “祝陈导一直做自己喜欢的研究，<br>
+        带最有意思的学生，<br>
+        发最满意的成果，<br>
+        当然，也一直这么帅。”
+      </div>
+      <div class="lab-line">
+        <span class="tag">论文顺利 ✓</span>
+        <span class="tag">项目顺利 ✓</span>
+        <span class="tag">学生给力 ✓</span>
+        <span class="tag">天天开心 ✓</span>
+      </div>
+      <div class="signature">—— 研一新生 安小龙</div>
+    </section>
+
+    <p class="tiny">Made with respect, humor & a little bit of CSS ✨</p>
+  </main>
+
+  <script>
+    function celebrate(){
+      document.getElementById('secret').style.display='block';
+      const colors=['#ff7f9f','#ffd768','#7ac7ff','#82d9b1','#a88cff','#ff9f68'];
+      for(let i=0;i<70;i++){
+        const c=document.createElement('div');
+        c.className='confetti';
+        c.style.left=Math.random()*100+'vw';
+        c.style.background=colors[Math.floor(Math.random()*colors.length)];
+        c.style.animationDuration=(2.2+Math.random()*2.6)+'s';
+        c.style.setProperty('--dx',((Math.random()-.5)*220)+'px');
+        c.style.transform='rotate('+Math.random()*360+'deg)';
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),5200);
+      }
+      if(navigator.vibrate){navigator.vibrate([40,30,40]);}
+    }
+
+    const funResult = () => document.getElementById('funResult');
+
+    function popEmoji(list=['✨','🎉','⭐','📚','🧪','😎']){
+      for(let i=0;i<9;i++){
+        const e=document.createElement('div');
+        e.className='emoji-pop';
+        e.textContent=list[Math.floor(Math.random()*list.length)];
+        e.style.left=(20+Math.random()*60)+'vw';
+        e.style.top=(52+Math.random()*24)+'vh';
+        document.body.appendChild(e);
+        setTimeout(()=>e.remove(),1400);
+      }
+    }
+
+    function tapFX(btn){
+      btn.classList.remove('shake');
+      void btn.offsetWidth;
+      btn.classList.add('shake');
+      if(navigator.vibrate){navigator.vibrate(25);}
+    }
+
+    function setPower(n,label){
+      document.getElementById('powerBar').style.width=n+'%';
+      document.getElementById('powerText').textContent=label;
+    }
+
+    function researchBox(btn){
+      tapFX(btn); popEmoji(['🧪','🔬','✨','📈']);
+      const arr=[
+        '抽到 SSR：灵感爆发！今天看文献，文献都主动把重点标出来。',
+        '抽到隐藏款：实验数据突然变得非常懂事。',
+        '抽到科研加速卡：项目推进速度 × 2，开会时间 ÷ 2。',
+        '抽到“审稿人今天心情很好”卡，稀有度：传说级。',
+        '抽到“基金本子越改越顺眼”buff，持续一整年。'
+      ];
+      funResult().innerHTML='🧪 <b>科研盲盒：</b>'+arr[Math.floor(Math.random()*arr.length)];
+      setPower(94,'科研战斗力：94% · 已进入高产状态');
+    }
+
+    function handsomeIndex(btn){
+      tapFX(btn); popEmoji(['😎','✨','📸','⭐']);
+      const n=98+Math.floor(Math.random()*3);
+      funResult().innerHTML=`😎 系统检测完成：陈导今日帅气指数 <b>${n}%</b>。<br>备注：剩下的 ${100-n}% 用来保持学术严谨。`;
+      setPower(99,'综合状态：99% · 颜值与科研同步在线');
+    }
+
+    function paperSimulator(btn){
+      tapFX(btn); popEmoji(['📄','✅','🎉','📨']);
+      const journals=['Nature 子刊编辑部','顶会 Area Chair','审稿人 #2','神秘编辑'];
+      const who=journals[Math.floor(Math.random()*journals.length)];
+      funResult().innerHTML=`📄 来自 <b>${who}</b> 的模拟消息：<span class="stamp">ACCEPT</span><br>评语：思路清晰，工作扎实，建议直接收。`;
+      setPower(100,'论文运势：100% · 这次不许 Major Revision');
+    }
+
+    function praiseMachine(btn){
+      tapFX(btn); popEmoji(['📣','👏','😄','💯']);
+      const arr=[
+        '“陈导讲问题特别清楚，属于听完以后脑子会自动连上线的那种。”',
+        '“科研能力很强，而且关键时刻总能给出靠谱方向。”',
+        '“有导师范儿，也有亲和力，最重要的是——确实帅。”',
+        '“跟着陈导做科研，感觉坑会少一点，成长会快一点。”',
+        '“学术判断在线，气场在线，发际线也必须一直在线。”'
+      ];
+      funResult().innerHTML='📣 学生夸夸机随机播报：<br><b>'+arr[Math.floor(Math.random()*arr.length)]+'</b>';
+      setPower(97,'学生好评率：97% · 剩下 3% 留给以后继续夸');
+    }
+
+    function luckySign(btn){
+      tapFX(btn); popEmoji(['🎋','🍀','✨','🌟']);
+      const arr=[
+        '上上签：项目顺、论文顺、学生也顺。',
+        '科研签王：今年会被很多“好消息”追着跑。',
+        '幸运签：所有 ddl 都恰好在灵感出现之后。',
+        '导师专属签：桃李满门，成果满仓。',
+        '隐藏签：今天适合收祝福，不适合收 Reviewer 2。'
+      ];
+      funResult().innerHTML='🎋 <b>'+arr[Math.floor(Math.random()*arr.length)]+'</b>';
+      setPower(96,'今日运势：96% · 非常适合过教师节');
+    }
+
+    function bossMode(btn){
+      tapFX(btn); popEmoji(['👑','🔥','🚀','💥']);
+      funResult().innerHTML='👑 <b>陈导 Boss 模式已开启：</b><br>看问题：一针见血；做科研：稳准狠；带学生：路线清晰；上镜：不需要滤镜。';
+      setPower(100,'Boss 战斗力：MAX · 系统拒绝继续测量');
+      celebrate();
+    }
+
+  </script>
+</body>
+</html>
